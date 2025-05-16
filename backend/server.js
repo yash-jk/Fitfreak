@@ -8,6 +8,7 @@ const cors = require("cors");
 
 //express app
 const app = express();
+const port = process.env.PORT || 4000 
 
 //middleware
 app.use(cors());
@@ -31,8 +32,8 @@ mongoose
   .then(() => {
     console.log("Connected to DB");
     //listens for request
-    app.listen(process.env.PORT, () => {
-      console.log("listening on port", process.env.PORT);
+    app.listen(port, () => {
+      console.log("listening on port", port);
     });
   })
   .catch((err) => {
